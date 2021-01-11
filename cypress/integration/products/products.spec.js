@@ -64,7 +64,7 @@ When('I click the add to cart button for first product in the list', () => {
   cy.get('.card-wrapper').eq(0).find('.mat-mini-fab').click().then(() => {
     cy.get('.ng-popup__ok-btn').click();
   });
-}); 
+});
 
 Then('I see the product in the cart', () => {
   cy.get('.cart-item-wrapper').should('length', 1);
