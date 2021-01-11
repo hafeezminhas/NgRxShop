@@ -1,0 +1,11 @@
+<div class="cart-wrapper" fxLayout="row wrap" *ngIf="cart">
+  <div fxFlex="100" class="heading"> <h4><span><mat-icon>shopping_cart</mat-icon></span> Cart ({{cart.length}})</h4> </div>
+  <div class="alert alert-info" fxFlex="100" *ngIf="!cart.length">No items selected in the cart to show</div>
+  <div class="cart-item-wrapper" *ngFor="let prod of cart" fxFlex="33" fxFlex.md="20" fxFlex.lg="10" fxFlex.xl="8">
+    <button mat-icon-button (click)="remove(prod)" class="remove-btn"> <mat-icon>cancel</mat-icon> </button>
+    <div class="cart-item" fxLayout="row wrap">
+      <div fxFlex="100" fxLayoutAlign="center start"> <img [src]="prod.productImage" alt=""> </div>
+      <div fxFlex="100" class="cart-item-label">{{prod.name}}</div>
+    </div>
+  </div>
+</div>

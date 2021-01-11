@@ -1,0 +1,17 @@
+<div fxLayout="row wrap">
+  <div class="card-wrapper" *ngFor="let prod of productList" fxFlex="50" fxFlex.md="33" fxFlex.lg="20" fxFlex.xl="15">
+    <mat-card class="product-card">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <div mat-card-title>{{prod.name}}</div>
+      </mat-card-header>
+      <img mat-card-image [src]="prod.productImage" [alt]="prod.name">
+      <mat-card-content>
+        <h4>Price: {{prod.price | currency: "USD"}}</h4>
+        <span fxFlex></span>
+        <button mat-mini-fab color="primary" (click)="addToCart(prod)" matTooltip="Add to cart"> <mat-icon>add_shopping_cart</mat-icon> </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

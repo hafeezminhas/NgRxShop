@@ -1,0 +1,11 @@
+<div fxLayout="row">
+  <div fxFlex="100" style="padding: 0 20px;">
+    <h4 class="page-title">Products</h4>
+  </div>
+</div>
+
+<app-product-filter [filterValue]="priceFilter" (filterChange)="onPriceFilterChange($event)"></app-product-filter>
+
+<app-product-list [productList]="products$ | async" (onCart)="addToCart($event)"></app-product-list>
+
+<app-cart [cart]="cart$ | async"></app-cart>
